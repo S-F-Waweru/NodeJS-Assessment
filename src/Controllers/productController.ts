@@ -52,7 +52,7 @@ export async function searchProduct(req:Request<{product : string}>, res:Respons
 
         let gotProduct = await (await dbInstance.exec('searchProduct',{name: req.params.product})).recordset as Product[]
         if(gotProduct){
-       return res.status(200).json({gotProduct})
+       return res.status(200).json(gotProduct)
         }
         return res.status(404).json({message : "Products not Found"})
     } catch (error:any) {
@@ -72,7 +72,7 @@ export async function paginatedProducts(req:Request, res:Response){
 
         let gotProducts = (await dbInstance.exec('paginateProducts',{num: +req.params.num})).recordset[0] as Product[]
         if(gotProducts){
-       return res.status(200).json({gotProducts})
+       return res.status(200).json(gotProducts)
         }
         return res.status(404).json({message : "Products not Found"})
     } catch (error:any) {

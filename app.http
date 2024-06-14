@@ -3,7 +3,7 @@ POST http://localhost:4000/products
 Content-Type: application/json
 
 {
-    "name": "fork",
+    "name": "fork 4",
     "price": "200"
 }
 
@@ -15,4 +15,4 @@ GET  http://localhost:4000/products
 GET  http://localhost:4000/products/spoon
 
 #######
-GET  http://localhost:4000/products/page/4
+GET  http://localhost:4000/products/page/3
